@@ -18,7 +18,7 @@ int a = 600, b = 650; // for default size of the screen
 int s = 0;
 // for menu option
 int dropped_eggs = 0;
-int speed_1 = 1, speed_2 = 1.5, speed_3 = 2, speed_4 = 2.5;
+int speed_1 = 1, speed_2 = 1.5, speed_3 = 2, speed_4 = 2.5; 
 int w = 48, h = 48, t = 10, e = 9, g = 12;
 void myinit();
 void start_screen(int, int);
@@ -79,6 +79,9 @@ void sun() //3
     for (int i = 0; i < 360; i++)
     {
         theta = i * PI * i / 180;
+        // circle is drawn using parametric form of circle 
+        // x = x_center + r*cos(theta) 
+        // y = y_center + r*sin(theta)
         glVertex2f(500 + 40 * cos(theta) , 600 + 40 * sin(theta) );
     }
 
@@ -219,7 +222,7 @@ void ground(int i, int j) //8
 void basket(int i, int j) //9 
 {
     j = 10;
-    if (i >= a - 60)i = a - 60; 
+    if (i >= a - 60)i = a - 60; // so that bucket don't exit the screen
 
     glColor3f(1.0, 0.0, 0.0);
     glBegin(GL_QUADS);
@@ -364,7 +367,7 @@ void display(void) //15
     line(0, 375);
 
     int i;
-    char z[71] = " Project by: Bibekpreet Singh, Harshit Bansal, Prakhar Tiwari (COE-13)";
+    char z[29] = " Project by: Harshit Bansal ";
     char level1[12] = "LEVEL 1";
     char level2[12] = "LEVEL 2";
     char level3[12] = "LEVEL 3";
@@ -382,7 +385,7 @@ void display(void) //15
         glColor3f(0, 0, 1);
 
         glRasterPos2i(10, 10);
-        for (i = 0; i < 71; i++)
+        for (i = 0; i < 29; i++)
             glutBitmapCharacter(GLUT_BITMAP_8_BY_13, z[i]);
 
         if (level_count == 1)
