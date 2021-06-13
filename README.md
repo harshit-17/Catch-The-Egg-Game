@@ -1,0 +1,2 @@
+# Catch-The-Egg-Game
+In this game we will place 3 chicken at the top which are fixed. They lay eggs one by one randomly and at the bottom we place a bowl which can be controlled by mouse.  The game is we have to catch the egg and the speed of dropping will increase after every (say)10 eggs (means level increased) and if we missed 10 eggs the game will be over and thus our score will be generated as number of egg caught.
